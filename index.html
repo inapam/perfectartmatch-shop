@@ -1,41 +1,91 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PerfectArtMatch – AI Art Shop</title>
-  <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 2em;
+      text-align: center;
+    }
+    header img {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 1em;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.2em;
+    }
+    p.subtitle {
+      font-size: 1.1em;
+      color: #555;
+    }
+    .buttons {
+      margin-top: 2em;
+      text-align: center;
+    }
+    .buttons a {
+      text-decoration: none;
+      display: inline-block;
+      margin: 0.5em;
+      padding: 1em 2em;
+      background-color: #111;
+      color: white;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1em;
+      padding: 2em;
+    }
+    .gallery-preview img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+      padding: 2em;
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
+  <header>
+    <img src="logo.png" alt="PerfectArtMatch Logo" />
     <h1>PerfectArtMatch – AI Art Shop</h1>
-    <nav>
-      <ul>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#artists">Artists</a></li>
-        <li><a href="#rooms">Rooms</a></li>
-        <li><a href="how-to-buy.html">How to Buy</a></li>
-        <li><a href="terms.html">Terms</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://perfectartmatch.com">Artist Sign-Up</a></li>
-      </ul>
-    </nav>
+    <p class="subtitle">A curated experience of poetic and digital minds.</p>
+    <div class="buttons">
+      <a href="form.html" target="_blank">Artist Sign-Up</a>
+      <a href="terms.html" target="_blank">Terms & Conditions</a>
+      <a href="#gallery">View Rooms</a>
+    </div>
   </header>
 
-  <section id="gallery" class="gallery-grid">
-    <div class="artwork-card">
-      <img src="images/art1.jpg" alt="Artwork Image" />
-      <h3>Title of the Artwork</h3>
-      <p>Artist: Artist Name</p>
-      <p>Room: Dream Room</p>
-    </div>
+  <section id="gallery" class="gallery-preview">
+    <img src="https://via.placeholder.com/400x500?text=Sala+Onirica" alt="Sala Onirica" />
+    <img src="https://via.placeholder.com/400x500?text=Sala+Montana" alt="Sala Montana" />
+    <img src="https://via.placeholder.com/400x500?text=Urban+Dream" alt="Urban Dream" />
+    <img src="https://via.placeholder.com/400x500?text=Just+for+You" alt="Just for You" />
   </section>
 
   <footer>
-    <button id="ai-bot">💬 Obi – AI Curator</button>
-    <p>&copy; 2025 PerfectArtMatch</p>
+    &copy; 2025 PerfectArtMatch. Powered by AI & heart.
   </footer>
-
-  <script src="obi.js"></script>
 </body>
 </html>
