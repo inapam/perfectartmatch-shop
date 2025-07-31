@@ -3,9 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery – Perfect Art Match</title>
+  <title>PerfectArtMatch Gallery Shop</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(to bottom right, #3b0a70, #712ac3);
+      color: white;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.2);
+    }
+    header img {
+      height: 40px;
+    }
+    .signup-btn {
+      background: #f06292;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+    .intro {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -14,8 +51,9 @@
     }
     .art-card {
       background: white;
+      color: black;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       overflow: hidden;
       transition: transform 0.3s ease;
     }
@@ -37,13 +75,43 @@
     .art-artist {
       font-style: italic;
       font-size: 0.9rem;
-      color: #666;
+      color: #444;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      padding: 1rem;
+      background: rgba(0,0,0,0.2);
+    }
+    footer a {
+      color: #ffccff;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1 style="text-align:center; margin-top:1rem;">🖼 Perfect Art Match – Gallery</h1>
+
+  <header>
+    <a href="index.html">
+      <img src="logo.png" alt="PerfectArtMatch logo" />
+    </a>
+    <a href="signup.html" class="signup-btn">Artist Sign-Up</a>
+  </header>
+
+  <h1>PerfectArtMatch Gallery Shop</h1>
+  <p class="intro">
+    Discover extraordinary artworks from talented artists across our exclusive exhibition rooms. Each piece tells a story, waiting to find its perfect home.
+  </p>
+
   <div class="gallery" id="gallery"></div>
+
+  <footer>
+    Artists pay a small fee to showcase their work.<br />
+    Buyers purchase directly from the artist.<br />
+    <a href="terms.html">Read the full Terms & Conditions here</a><br/><br/>
+    &copy; 2024 PerfectArtMatch. All rights reserved.
+  </footer>
 
   <script>
     const artworks = [
