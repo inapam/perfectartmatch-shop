@@ -1,15 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PerfectArtMatch Gallery Shop</title>
+  <title>PerfectArtMatch Gallery</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
+      font-family: Arial, sans-serif;
       background: linear-gradient(to bottom right, #3b0a70, #712ac3);
+      margin: 0;
       color: white;
     }
     header {
@@ -20,28 +20,18 @@
       background: rgba(0,0,0,0.2);
     }
     header img {
-      height: 70px;
+      height: 60px;
     }
     .signup-btn {
       background: #f06292;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 20px;
-      text-decoration: none;
       color: white;
       font-weight: bold;
+      text-decoration: none;
     }
-    h1 {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 2rem;
-    }
-    .intro {
-      text-align: center;
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+    .signup-btn:hover {
+      background: #e91e63;
     }
     .gallery {
       display: grid;
@@ -53,8 +43,8 @@
       background: white;
       color: black;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
     }
     .art-card:hover {
@@ -62,7 +52,6 @@
     }
     .art-card img {
       width: 100%;
-      height: auto;
       display: block;
     }
     .art-info {
@@ -79,10 +68,8 @@
     }
     footer {
       text-align: center;
+      margin: 2rem 0;
       font-size: 0.9rem;
-      margin-top: 3rem;
-      padding: 1rem;
-      background: rgba(0,0,0,0.2);
     }
     footer a {
       color: #ffccff;
@@ -93,50 +80,27 @@
 <body>
 
   <header>
-    <a href="index.html">
-      <img src="logo.png" alt="PerfectArtMatch logo" />
-    </a>
-   <a href="https://formspree.io/f/xwkgrqnn" class="signup-btn" target="_blank" rel="noopener noreferrer">Artist Sign-Up</a>
+    <img src="logo.png" alt="PerfectArtMatch logo">
+    <a href="form.html" class="signup-btn">Artist Sign-Up</a>
   </header>
 
-  <h1>PerfectArtMatch Gallery Shop</h1>
-  <p class="intro">
-    Discover extraordinary artworks from talented artists across our exclusive exhibition rooms. Each piece tells a story, waiting to find its perfect home.
-  </p>
+  <h1 style="text-align:center; margin-top: 1rem;">PerfectArtMatch Gallery Shop</h1>
+  <p class="intro" style="text-align:center;">Discover artworks by unique artists across themed rooms</p>
 
   <div class="gallery" id="gallery"></div>
 
   <footer>
-    Artists pay a small fee to showcase their work.<br />
-    Buyers purchase directly from the artist.<br />
-    <a href="terms.html">Read the full Terms & Conditions here</a><br/><br/>
-    &copy; 2024 PerfectArtMatch. All rights reserved.
+    <p>Artists pay 10 CHF after 10 works • Direct contact with buyers</p>
+    <a href="terms.html">Read the full Terms & Conditions</a>
   </footer>
 
   <script>
     const artworks = [
-      {
-        title: "JUST FOR YOU",
-        artist: "InaPam",
-        image: "JUST FOR YOU.png"
-      },
-      {
-        title: "MONTANA",
-        artist: "InaPam",
-        image: "MONTANA.png"
-      },
-      {
-        title: "ONIRICA",
-        artist: "InaPam",
-        image: "ONIRICA.png"
-      },
-      {
-        title: "URBAN DREAM",
-        artist: "InaPam",
-        image: "URBAN DREAM.png"
-      }
+      { title: "JUST FOR YOU", artist: "InaPam", image: "JUST FOR YOU.png" },
+      { title: "MONTANA", artist: "InaPam", image: "MONTANA.png" },
+      { title: "ONIRICA", artist: "InaPam", image: "ONIRICA.png" },
+      { title: "URBAN DREAM", artist: "InaPam", image: "URBAN DREAM.png" }
     ];
-
     const gallery = document.getElementById('gallery');
     artworks.forEach(work => {
       const card = document.createElement('div');
@@ -151,5 +115,6 @@
       gallery.appendChild(card);
     });
   </script>
+
 </body>
 </html>
