@@ -6,12 +6,19 @@
   <title>PerfectArtMatch Gallery Shop</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #3b0a70, #712ac3);
+      color: white;
+    }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background: linear-gradient(to right, #3b0a70, #712ac3);
+      background: rgba(0,0,0,0.2);
     }
     header img {
       height: 60px;
@@ -27,21 +34,74 @@
     .signup-btn:hover {
       background: #e91e63;
     }
+    main h1 {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .art-card {
+      background: white;
+      color: black;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .art-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: rgba(0,0,0,0.2);
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #ffccff;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="PerfectArtMatch Logo" />
+    <a href="index.html">
+      <img src="logo.png" alt="PerfectArtMatch Logo" />
+    </a>
     <a href="form.html" class="signup-btn">Artist Sign-Up</a>
   </header>
 
-  <main style="text-align:center; margin-top:2rem;">
+  <main>
     <h1>PerfectArtMatch Gallery Shop</h1>
-    <p>Discover, submit and collect meaningful artworks. Join the movement.</p>
+    <p style="text-align:center;">Discover extraordinary artworks from talented artists across our exclusive exhibition rooms.</p>
+    <div class="gallery">
+      <div class="art-card">
+        <img src="JUST FOR YOU.png" alt="JUST FOR YOU" />
+        <div><strong>JUST FOR YOU</strong><br><em>by InaPam</em></div>
+      </div>
+      <div class="art-card">
+        <img src="MONTANA.png" alt="MONTANA" />
+        <div><strong>MONTANA</strong><br><em>by InaPam</em></div>
+      </div>
+      <div class="art-card">
+        <img src="ONIRICA.png" alt="ONIRICA" />
+        <div><strong>ONIRICA</strong><br><em>by InaPam</em></div>
+      </div>
+      <div class="art-card">
+        <img src="URBAN DREAM.png" alt="URBAN DREAM" />
+        <div><strong>URBAN DREAM</strong><br><em>by InaPam</em></div>
+      </div>
+    </div>
   </main>
 
-  <footer style="text-align:center; margin-top: 3rem;">
+  <footer>
     <a href="terms.html">Read the full Terms & Conditions</a>
   </footer>
 
