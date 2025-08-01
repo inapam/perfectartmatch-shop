@@ -2,107 +2,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Artist Submission Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            margin: 2em;
-            color: #222;
-        }
-        h2 {
-            text-align: center;
-            color: #111;
-        }
-        form {
-            background-color: #fff;
-            padding: 2em;
-            max-width: 600px;
-            margin: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        label {
-            display: block;
-            margin-top: 1em;
-            font-weight: bold;
-        }
-        input, textarea, select {
-            width: 100%;
-            padding: 0.6em;
-            margin-top: 0.3em;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
-        }
-        button {
-            margin-top: 1.5em;
-            padding: 0.7em 1.5em;
-            font-size: 1em;
-            background-color: #444;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        p.note {
-            margin-top: 2em;
-            font-size: 0.95em;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Artist Submission Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 2em;
+      color: #222;
+    }
+    h2 {
+      text-align: center;
+      color: #111;
+    }
+    form {
+      background-color: #fff;
+      padding: 2em;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 1em;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.7em;
+      margin-top: 0.3em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 1.5em;
+      background-color: #5a00b0;
+      color: white;
+      padding: 0.8em 1.5em;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #42008c;
+    }
+    .note {
+      margin-top: 1.5em;
+      font-size: 0.95em;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
-    <h2>Artist Submission Form</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
-        <label for="fullName">Full Name</label>
-        <input type="text" id="fullName" name="fullName" required>
 
-        <label for="contact">Contact for Sale (email or phone)</label>
-        <input type="text" id="contact" name="contact" required>
+  <h2>Submit Your Artwork</h2>
 
-        <label for="artTitle">Artwork Title</label>
-        <input type="text" id="artTitle" name="artTitle" required>
+  <form action="https://formspree.io/f/mvgayppl" method="POST" enctype="multipart/form-data">
+    <label>Full Name:</label>
+    <input type="text" name="name" required>
 
-        <label for="medium">Technique & Dimensions</label>
-        <input type="text" id="medium" name="medium" placeholder="e.g. Oil on canvas, 70x100 cm" required>
+    <label>Contact (email or phone):</label>
+    <input type="text" name="contact" required>
 
-        <label for="description">Description</label>
-        <textarea id="description" name="description" placeholder="Tell us something about your work..." rows="4"></textarea>
+    <label>Artwork Title:</label>
+    <input type="text" name="title" required>
 
-        <label for="aiStyle">AI Description Style</label>
-        <select id="aiStyle" name="aiStyle">
-            <option value="own words">Artist’s own words (no AI description)</option>
-            <option value="clear">Clear</option>
-            <option value="poetic">Poetic</option>
-            <option value="philosophical">Philosophical</option>
-            <option value="cheesy">Cheesy</option>
-            <option value="critical">Critical</option>
-        </select>
+    <label>Technique & Dimensions:</label>
+    <input type="text" name="technique" required>
 
-        <label for="room">Room Preference</label>
-        <select id="room" name="room">
-            <option value="Sala Onirica">Sala Onirica</option>
-            <option value="Sala Montana">Sala Montana</option>
-            <option value="Urban Dream">Urban Dream</option>
-            <option value="Just for You">Just for You</option>
-            <option value="Sala Personală">Personal Artist Room</option>
-        </select>
+    <label>Description:</label>
+    <textarea name="description" rows="4" required></textarea>
 
-        <label for="image">Upload Artwork Image (max 10MB)</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
+    <label>Room Selection:</label>
+    <select name="room">
+      <option value="Onirica">Sala Onirica</option>
+      <option value="Montana">Sala Montana</option>
+      <option value="Urban">Sala Urban Dream</option>
+      <option value="Just">Just For You</option>
+      <option value="Personal">Personal Artist Room</option>
+    </select>
 
-        <label>
-            <input type="checkbox" name="agree" required>
-            I confirm I have read and agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>.
-        </label>
+    <label>Upload Artwork Image (max 10MB):</label>
+    <input type="file" name="image" accept="image/*">
 
-        <button type="submit">Submit Artwork</button>
+    <label>
+      <input type="checkbox" name="terms" required>
+      I confirm I have read and agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>.
+    </label>
 
-        <p class="note">Please transfer <strong>10 CHF per 10 artworks</strong> to:<br>
-        <strong>inazurichpam@protonmail.com</strong> (PayPal)<br>
-        The artist is fully responsible for the sale and direct contact with the buyer.</p>
-    </form>
+    <div class="note">
+      Please transfer 10 CHF per 10 artworks to PayPal: <strong>inazurichpam@protonmail.com</strong>.<br>
+      The artist is fully responsible for the sale and direct contact with the buyer.
+    </div>
+
+    <button type="submit">Submit Artwork</button>
+  </form>
+
 </body>
 </html>
