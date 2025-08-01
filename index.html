@@ -3,94 +3,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PerfectArtMatch – AI Art Shop</title>
+  <title>PerfectArtMatch Gallery Shop</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
     header {
-      background-color: #ffffff;
-      padding: 2em;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(to right, #3b0a70, #712ac3);
     }
     header img {
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 1em;
+      height: 60px;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.2em;
-    }
-    p.subtitle {
-      font-size: 1.1em;
-      color: #555;
-    }
-    .buttons {
-      margin-top: 2em;
-      text-align: center;
-    }
-    .buttons a {
-      text-decoration: none;
-      display: inline-block;
-      margin: 0.5em;
-      padding: 1em 2em;
-      background-color: #555;
+    .signup-btn {
+      background: #f06292;
+      padding: 0.6rem 1rem;
+      border-radius: 20px;
       color: white;
-      border-radius: 4px;
       font-weight: bold;
-    }
-    .gallery-preview {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1em;
-      padding: 2em;
-      text-align: center;
-    }
-    .gallery-preview a {
       text-decoration: none;
-      color: inherit;
     }
-    .gallery-preview img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #888;
-      padding: 2em;
+    .signup-btn:hover {
+      background: #e91e63;
     }
   </style>
 </head>
 <body>
+
   <header>
     <img src="logo.png" alt="PerfectArtMatch Logo" />
-    <h1>PerfectArtMatch – AI Art Shop</h1>
-    <p class="subtitle">A curated experience of poetic and digital minds.</p>
-    <div class="buttons">
-      <a href="form.html" target="_blank">Artist Sign-Up</a>
-      <a href="terms.html" target="_blank">Terms & Conditions</a>
-      <a href="#gallery">View Rooms</a>
-    </div>
+    <a href="form.html" class="signup-btn">Artist Sign-Up</a>
   </header>
 
-  <section id="gallery" class="gallery-preview">
-    <a href="onirica.html"><img src="ONIRICA.png" alt="Sala Onirica" /><p>Sala Onirica</p></a>
-    <a href="montana.html"><img src="MONTANA.png" alt="Sala Montana" /><p>Sala Montana</p></a>
-    <a href="urban.html"><img src="URBAN%20DREAM.png" alt="Urban Dream" /><p>Urban Dream</p></a>
-    <a href="justforyou.html"><img src="JUST%20FOR%20YOU.png" alt="Just for You" /><p>Just for You</p></a>
-  </section>
+  <main style="text-align:center; margin-top:2rem;">
+    <h1>PerfectArtMatch Gallery Shop</h1>
+    <p>Discover, submit and collect meaningful artworks. Join the movement.</p>
+  </main>
 
-  <footer>
-    &copy; 2025 PerfectArtMatch. Powered by AI & heart.
+  <footer style="text-align:center; margin-top: 3rem;">
+    <a href="terms.html">Read the full Terms & Conditions</a>
   </footer>
+
 </body>
 </html>
