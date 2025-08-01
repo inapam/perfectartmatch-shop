@@ -37,7 +37,7 @@
     }
     button {
       margin-top: 1.5em;
-      background-color: #5a00b0;
+      background-color: #a20000;
       color: white;
       padding: 0.8em 1.5em;
       border: none;
@@ -46,37 +46,48 @@
       cursor: pointer;
     }
     button:hover {
-      background-color: #42008c;
+      background-color: #7a0000;
     }
     .note {
       margin-top: 1.5em;
       font-size: 0.95em;
       color: #444;
+      background-color: #fff4cc;
+      padding: 1em;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
 
-  <h2>Submit Your Artwork</h2>
+  <h2>Artist Submission Form</h2>
 
   <form action="https://formspree.io/f/mvgayppl" method="POST" enctype="multipart/form-data">
-    <label>Full Name:</label>
-    <input type="text" name="name" required>
+    <label for="name">Full Name</label>
+    <input type="text" name="name" required />
 
-    <label>Contact (email or phone):</label>
-    <input type="text" name="contact" required>
+    <label for="contact">Contact for Sale (email or phone)</label>
+    <input type="text" name="contact" required />
 
-    <label>Artwork Title:</label>
-    <input type="text" name="title" required>
+    <label for="title">Artwork Title</label>
+    <input type="text" name="title" required />
 
-    <label>Technique & Dimensions:</label>
-    <input type="text" name="technique" required>
+    <label for="technique">Technique & Dimensions</label>
+    <input type="text" name="technique" required />
 
-    <label>Description:</label>
+    <label for="description">Description</label>
     <textarea name="description" rows="4" required></textarea>
 
-    <label>Room Selection:</label>
+    <label for="ai-style">AI Description Style</label>
+    <select name="ai-style">
+      <option value="own-words">Artist’s own words (no AI description)</option>
+      <option value="ai-text">Curated poetic/critical text (by our team)</option>
+    </select>
+
+    <label for="room">Room Preference</label>
     <select name="room">
+      <option value="">– Please choose –</option>
       <option value="Onirica">Sala Onirica</option>
       <option value="Montana">Sala Montana</option>
       <option value="Urban">Sala Urban Dream</option>
@@ -84,17 +95,18 @@
       <option value="Personal">Personal Artist Room</option>
     </select>
 
-    <label>Upload Artwork Image (max 10MB):</label>
-    <input type="file" name="image" accept="image/*">
+    <label for="image">Upload Artwork Image (max 10MB)</label>
+    <input type="file" name="image" accept="image/*" />
 
     <label>
-      <input type="checkbox" name="terms" required>
-      I confirm I have read and agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>.
+      <input type="checkbox" name="terms" required />
+      I confirm I have read and agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>.
     </label>
 
     <div class="note">
-      Please transfer 10 CHF per 10 artworks to PayPal: <strong>inazurichpam@protonmail.com</strong>.<br>
-      The artist is fully responsible for the sale and direct contact with the buyer.
+      🧾 After submitting up to 10 artworks, please support the exhibition by sending a flat fee of <strong>10 CHF</strong> via PayPal to:<br />
+      <strong>inazurichpam@protonmail.com</strong><br /><br />
+      Thank you for sharing your art with the world! 🌍
     </div>
 
     <button type="submit">Submit Artwork</button>
