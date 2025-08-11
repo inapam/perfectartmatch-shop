@@ -1,108 +1,91 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>PerfectArtMatch Gallery Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
+    body{
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      margin:0; padding:0;
       background: linear-gradient(to bottom right, #3b0a70, #712ac3);
-      color: white;
+      color:white;
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(0,0,0,0.2);
+    header{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2rem; background:rgba(0,0,0,.2);
     }
-    header img {
-      height: 60px;
+    header img{ height:60px; }
+    .signup-btn{
+      background:#f06292; padding:.6rem 1rem; border-radius:20px;
+      color:white; font-weight:bold; text-decoration:none;
     }
-    .signup-btn {
-      background: #f06292;
-      padding: 0.6rem 1rem;
-      border-radius: 20px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
+    .signup-btn:hover{ background:#e91e63; }
+
+    main h1{ text-align:center; margin-top:1.5rem; }
+    .intro{ text-align:center; margin:.25rem 0 1rem; opacity:.95; }
+
+    .gallery{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:1.5rem; padding:2rem;
     }
-    .signup-btn:hover {
-      background: #e91e63;
+    .art-card{
+      background:white; color:black; border-radius:12px; overflow:hidden; text-align:center;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
     }
-    main h1 {
-      text-align: center;
-      margin-top: 1.5rem;
+    .art-card img{ width:100%; height:auto; display:block; }
+    .art-card .meta{ padding:.7rem 1rem 1rem; }
+
+    footer{
+      text-align:center; margin-top:2rem; padding:1rem; background:rgba(0,0,0,.2);
+      font-size:.95rem;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-    .art-card {
-      background: white;
-      color: black;
-      border-radius: 12px;
-      overflow: hidden;
-      text-align: center;
-    }
-    .art-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      padding: 1rem;
-      background: rgba(0,0,0,0.2);
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #ffccff;
-      text-decoration: underline;
-    }
+    footer a, footer a:visited{ color:#ffffff; text-decoration:underline; }
+    footer a:hover{ text-decoration:none; }
   </style>
 </head>
 <body>
 
   <header>
-    <a href="index.html">
-      <img src="logo.png" alt="PerfectArtMatch Logo" />
+    <a href="index.html" aria-label="Back to home">
+      <img src="logo.png" alt="PerfectArtMatch logo" />
     </a>
     <a href="form.html" class="signup-btn">Artist Sign-Up</a>
   </header>
 
   <main>
     <h1>PerfectArtMatch Gallery Shop</h1>
-    <p style="text-align:center;">Discover extraordinary artworks from talented artists across our exclusive exhibition rooms.</p>
+    <p class="intro">Discover extraordinary artworks from talented artists across our exclusive exhibition rooms.</p>
+
     <div class="gallery">
       <div class="art-card">
-        <img src="JUST FOR YOU.png" alt="JUST FOR YOU" />
-        <div><strong>JUST FOR YOU</strong><br><em>by InaPam</em></div>
+        <img src="JUST FOR YOU.png" alt="JUST FOR YOU by InaPam">
+        <div class="meta"><strong>JUST FOR YOU</strong><br><em>by InaPam</em></div>
       </div>
       <div class="art-card">
-        <img src="MONTANA.png" alt="MONTANA" />
-        <div><strong>MONTANA</strong><br><em>by InaPam</em></div>
+        <img src="MONTANA.png" alt="MONTANA by InaPam">
+        <div class="meta"><strong>MONTANA</strong><br><em>by InaPam</em></div>
       </div>
       <div class="art-card">
-        <img src="ONIRICA.png" alt="ONIRICA" />
-        <div><strong>ONIRICA</strong><br><em>by InaPam</em></div>
+        <img src="ONIRICA.png" alt="ONIRICA by InaPam">
+        <div class="meta"><strong>ONIRICA</strong><br><em>by InaPam</em></div>
       </div>
       <div class="art-card">
-        <img src="URBAN DREAM.png" alt="URBAN DREAM" />
-        <div><strong>URBAN DREAM</strong><br><em>by InaPam</em></div>
+        <img src="URBAN DREAM.png" alt="URBAN DREAM by InaPam">
+        <div class="meta"><strong>URBAN DREAM</strong><br><em>by InaPam</em></div>
       </div>
     </div>
   </main>
 
   <footer>
-    <a href="terms.html">Read the full Terms & Conditions</a>
+    <p style="margin:.2rem 0 1rem">Artists pay 10 CHF after 10 works • Direct contact with buyers</p>
+    <a href="terms.html" target="_blank" rel="noopener">Read the full Terms &amp; Conditions</a>
+  </footer>
+
+</body>
+</html>
+
   </footer>
 
 </body>
