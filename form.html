@@ -1,80 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Artist Sign-Up • PerfectArtMatch</title>
+  <meta charset="UTF-8" />
+  <title>Artist Sign‑Up · PerfectArtMatch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root{--bg1:#3b0a70;--bg2:#712ac3;--card:#fff;--ink:#111;--muted:#666;--accent:#e91e63;--ring:rgba(0,0,0,.08)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));min-height:100vh;
+      display:flex;align-items:center;justify-content:center;padding:32px 16px}
+    .wrap{width:100%;max-width:980px;background:var(--card);border-radius:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden}
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;
+      background-image:linear-gradient(135deg,rgba(0,0,0,.22),rgba(0,0,0,.10));color:#fff}
+    header .logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+    header .logo img{height:36px}
+    h1{margin:18px 18px 8px;text-align:center}
+    p.lead{margin:0 18px 18px;text-align:center;color:var(--muted)}
+    form{padding:0 18px 22px}
+    label{display:block;font-weight:600;margin:14px 0 6px}
+    input[type="text"],input[type="email"],input[type="number"],textarea,select{
+      width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--ring);background:#fff;font-size:15px}
+    textarea{min-height:120px;resize:vertical}
+    .row{display:grid;gap:12px}
+    @media (min-width:760px){.two{grid-template-columns:1fr 1fr}.three{grid-template-columns:1fr 1fr 1fr}.four{grid-template-columns:1.4fr 1fr 1fr .8fr}}
+    .unit{display:flex;gap:10px}
+    .unit > *{flex:1}
+    .hint{font-size:12px;color:var(--muted);margin-top:6px}
+    .note{background:#fff7d6;border:1px solid #f2e4a5;color:#7a5a00;padding:12px 14px;border-radius:10px;margin-top:14px;line-height:1.4}
+    .agree{display:flex;align-items:center;gap:10px;margin-top:12px}
+    .actions{display:flex;justify-content:center;padding:18px}
+    button{background:var(--accent);color:#fff;border:none;padding:12px 24px;border-radius:12px;font-weight:700;cursor:pointer;font-size:16px;box-shadow:0 6px 14px rgba(233,30,99,.35)}
+    button:hover{filter:brightness(.95)}
+    footer{text-align:center;padding:14px 18px 22px;color:#fff;font-size:13px}
+    footer a{color:#ffccff;text-decoration:underline}
+  </style>
 </head>
 <body>
-  <header>
-    <a href="gallery.html" aria-label="Back to gallery">
-      <img src="logo.png" alt="PerfectArtMatch logo" />
-    </a>
-    <a href="form.html" class="signup-btn" target="_blank" rel="noopener">Artist Sign-Up</a>
-  </header>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="gallery.html" title="Back to Gallery">
+        <img src="logo.png" alt="PerfectArtMatch logo">
+        <strong>PerfectArtMatch · Artist Sign‑Up</strong>
+      </a>
+      <a href="gallery.html" style="color:#fff;text-decoration:underline;">← Back to Gallery</a>
+    </header>
 
-  <main>
-    <h1>Artist Sign-Up</h1>
-    <form action="https://formspree.io/f/mvgayppl" method="POST">
-      <input type="hidden" name="_redirect" value="https://inapam.github.io/perfectartmatch-shop/thanks.html" />
+    <h1>Artist Sign‑Up</h1>
+    <p class="lead">Submit a sample artwork to join the exhibition rooms. Technical details help our curators place your work correctly.</p>
 
-      <label for="name">Full Name *</label>
-      <input type="text" id="name" name="name" required>
+    <!-- Formspree -->
+    <form action="https://formspree.io/f/mvgayppl" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="New Artist Submission · PerfectArtMatch" />
+      <!-- 1) Artist -->
+      <div class="row two">
+        <div>
+          <label for="name">Full Name *</label>
+          <input id="name" name="name" type="text" required placeholder="Your full name">
+        </div>
+        <div>
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required placeholder="name@example.com">
+        </div>
+      </div>
 
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" required>
+      <div class="row two">
+        <div>
+          <label for="bio">Short Bio</label>
+          <input id="bio" name="bio" type="text" placeholder="One‑line intro (optional)">
+        </div>
+        <div>
+          <label for="instagram">Instagram (optional)</label>
+          <input id="instagram" name="instagram" type="text" placeholder="@yourhandle">
+        </div>
+      </div>
 
-      <label for="bio">Short Bio *</label>
-      <textarea id="bio" name="bio" required></textarea>
+      <div class="row two">
+        <div>
+          <label for="portfolio">Website / Portfolio (optional)</label>
+          <input id="portfolio" name="portfolio" type="text" placeholder="https://…">
+        </div>
+        <div>
+          <label for="room">Room Preference *</label>
+          <select id="room" name="room" required>
+            <option value="" selected disabled>– Please choose –</option>
+            <option>Sala Onirica</option>
+            <option>Montana</option>
+            <option>Urban Dream</option>
+            <option>Just For You</option>
+            <option>Personal Artist Room</option>
+          </select>
+        </div>
+      </div>
 
-      <label for="title">Sample Artwork Title *</label>
-      <input type="text" id="title" name="artwork_title" required>
+      <!-- 2) Artwork -->
+      <label for="title">Artwork Title *</label>
+      <input id="title" name="title" type="text" required placeholder="Title of the work">
 
-      <label for="room">Room Preference *</label>
-      <select id="room" name="room" required>
-        <option value="" selected disabled>— Please choose —</option>
-        <option>Just For You</option>
-        <option>Montana</option>
-        <option>Onirica</option>
-        <option>Urban Dream</option>
-      </select>
+      <div class="row two">
+        <div>
+          <label for="medium">Medium / Technique *</label>
+          <input id="medium" name="medium" type="text" required placeholder="e.g. Oil on canvas, Digital print, Mixed media">
+        </div>
+        <div>
+          <label for="style">Style</label>
+          <input id="style" name="style" type="text" placeholder="e.g. Abstract, Figurative, Minimalist">
+        </div>
+      </div>
 
-      <label for="desc">Artwork Description *</label>
-      <textarea id="desc" name="artwork_description" required></textarea>
+      <label>Dimensions *</label>
+      <div class="row four">
+        <input name="width" type="number" min="0" step="0.1" placeholder="Width" required>
+        <input name="height" type="number" min="0" step="0.1" placeholder="Height" required>
+        <input name="depth" type="number" min="0" step="0.1" placeholder="Depth (optional)">
+        <select name="units" aria-label="Units">
+          <option>cm</option>
+          <option>in</option>
+        </select>
+      </div>
+      <div class="row two">
+        <div>
+          <label for="year">Year</label>
+          <input id="year" name="year" type="number" min="1900" max="2100" placeholder="2025">
+        </div>
+        <div>
+          <label for="price">Suggested Price (CHF)</label>
+          <input id="price" name="price" type="number" min="0" step="1" placeholder="Optional">
+        </div>
+      </div>
 
-      <label>
-        <input type="checkbox" name="want_ai_description" value="yes">
-        Also create an AI-assisted description for my artwork
+      <label for="desc">Artwork Description (artist’s words)</label>
+      <textarea id="desc" name="description" placeholder="Medium, process, story, concept…"></textarea>
+
+      <div class="row two">
+        <div>
+          <label for="ai_style">AI‑assisted description</label>
+          <select id="ai_style" name="ai_style">
+            <option>Artist’s own words (no AI description)</option>
+            <option>Concise poetic caption (by our team)</option>
+            <option>Curated poetic/critical text (by our team)</option>
+          </select>
+          <div class="hint">Choose how the public description appears.</div>
+        </div>
+        <div>
+          <label for="image">Upload Artwork Image (max 10MB) *</label>
+          <input id="image" name="image" type="file" accept="image/*" required>
+        </div>
+      </div>
+
+      <label class="agree">
+        <input type="checkbox" name="agree" required>
+        <span>I confirm I have read and agree to the
+          <a href="terms.html" target="_blank" rel="noopener">Terms & Conditions</a>.
+        </span>
       </label>
 
-      <label for="portfolio">Portfolio / Website (optional)</label>
-      <input type="url" id="portfolio" name="portfolio">
-
-      <label for="instagram">Instagram (optional)</label>
-      <input type="url" id="instagram" name="instagram">
-
-      <label>
-        <input type="checkbox" name="agree_terms" required>
-        I confirm I’ve read the <a href="terms.html" target="_blank" rel="noopener">Terms & Conditions</a>
-      </label>
-
-      <p style="margin-top:1rem; font-weight:bold; color:#b00;">
-        Please transfer 10 CHF per 10 artworks to PayPal: <strong>inazurichpam@protonmail.com</strong> after submitting your works.  
+      <div class="note">
+        <strong>Support fee:</strong> After submitting up to <strong>10 artworks</strong>, please support the exhibition by sending a flat fee of
+        <strong>10 CHF</strong> via PayPal to: <strong>inazurichpam@protonmail.com</strong>.<br>
         The artist is fully responsible for the sale and direct contact with the buyer.
-      </p>
+      </div>
 
-      <button type="submit">Submit Profile</button>
+      <div class="actions">
+        <button type="submit">Submit Artwork</button>
+      </div>
     </form>
-  </main>
 
-  <footer>
-    <p>
-      Need help? Write to us or ping Obi in the gallery.
-      &nbsp;|&nbsp;
-      <a href="terms.html" target="_blank" rel="noopener">Read the full Terms &amp; Conditions</a>
-    </p>
-  </footer>
+    <footer>
+      Need help? See the <a href="terms.html" target="_blank" rel="noopener">Terms</a> or contact us.
+    </footer>
+  </div>
 </body>
 </html>
+
 
