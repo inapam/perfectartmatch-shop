@@ -1,116 +1,116 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Artist Submission Form</title>
+  <meta charset="utf-8" />
+  <title>Artist Sign-Up • PerfectArtMatch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f3f3;
-      margin: 2em;
-      color: #222;
+    body{
+      font-family:Arial,sans-serif; margin:0; padding:0;
+      background:linear-gradient(to bottom right,#3b0a70,#712ac3);
+      color:white;
     }
-    h2 {
-      text-align: center;
-      color: #111;
+    header{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2rem; background:rgba(0,0,0,0.2);
     }
-    form {
-      background-color: #fff;
-      padding: 2em;
-      max-width: 600px;
-      margin: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    header img{ height:60px; }
+    .signup-btn{
+      background:#f06292; padding:.6rem 1rem; border-radius:20px;
+      color:white; font-weight:bold; text-decoration:none;
     }
-    label {
-      display: block;
-      margin-top: 1em;
-      font-weight: bold;
+    .signup-btn:hover{ background:#e91e63; }
+    main{ max-width:900px; margin:2rem auto; padding:0 1rem; }
+    h1{ text-align:center; }
+    form{
+      background:white; color:black; border-radius:12px;
+      padding:1.5rem; box-shadow:0 10px 24px rgba(0,0,0,0.18);
     }
-    input, textarea, select {
-      width: 100%;
-      padding: 0.7em;
-      margin-top: 0.3em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    label{ display:block; margin-top:1rem; font-weight:bold; }
+    input, textarea, select{
+      width:100%; padding:.6rem; margin-top:.3rem;
+      border:1px solid #ccc; border-radius:8px; font:inherit;
     }
-    button {
-      margin-top: 1.5em;
-      background-color: #a20000;
-      color: white;
-      padding: 0.8em 1.5em;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
+    button{
+      background:#f06292; color:white; border:none;
+      padding:.8rem 1.2rem; margin-top:1.5rem;
+      border-radius:8px; font-weight:bold; cursor:pointer;
     }
-    button:hover {
-      background-color: #7a0000;
+    button:hover{ background:#e91e63; }
+    footer{
+      text-align:center; margin:2rem 0; font-size:.9rem;
     }
-    .note {
-      margin-top: 1.5em;
-      font-size: 0.95em;
-      color: #444;
-      background-color: #fff4cc;
-      padding: 1em;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
+    footer a{ color:white; text-decoration:underline; }
   </style>
 </head>
 <body>
 
-  <h2>Artist Submission Form</h2>
+  <header>
+    <a href="gallery.html" aria-label="Back to gallery">
+      <img src="logo.png" alt="PerfectArtMatch logo" />
+    </a>
+    <a href="form.html" class="signup-btn" target="_blank" rel="noopener">Artist Sign-Up</a>
+  </header>
 
-  <form action="https://formspree.io/f/mvgayppl" method="POST" enctype="multipart/form-data">
-    <label for="name">Full Name</label>
-    <input type="text" name="name" required />
+  <main>
+    <h1>Artist Sign-Up</h1>
+    <form action="https://formspree.io/f/mvgayppl" method="POST">
+      <!-- Redirect după trimitere -->
+      <input type="hidden" name="_redirect" value="https://inapam.github.io/perfectartmatch-shop/thanks.html" />
 
-    <label for="contact">Contact for Sale (email or phone)</label>
-    <input type="text" name="contact" required />
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required>
 
-    <label for="title">Artwork Title</label>
-    <input type="text" name="title" required />
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required>
 
-    <label for="technique">Technique & Dimensions</label>
-    <input type="text" name="technique" required />
+      <label for="bio">Short Bio *</label>
+      <textarea id="bio" name="bio" required></textarea>
 
-    <label for="description">Description</label>
-    <textarea name="description" rows="4" required></textarea>
+      <label for="title">Sample Artwork Title *</label>
+      <input type="text" id="title" name="artwork_title" required>
 
-    <label for="ai-style">AI Description Style</label>
-    <select name="ai-style">
-      <option value="own-words">Artist’s own words (no AI description)</option>
-      <option value="ai-text">Curated poetic/critical text (by our team)</option>
-    </select>
+      <label for="room">Room Preference *</label>
+      <select id="room" name="room" required>
+        <option value="" selected disabled>— Please choose —</option>
+        <option>Just For You</option>
+        <option>Montana</option>
+        <option>Onirica</option>
+        <option>Urban Dream</option>
+      </select>
 
-    <label for="room">Room Preference</label>
-    <select name="room">
-      <option value="">– Please choose –</option>
-      <option value="Onirica">Sala Onirica</option>
-      <option value="Montana">Sala Montana</option>
-      <option value="Urban">Sala Urban Dream</option>
-      <option value="Just">Just For You</option>
-      <option value="Personal">Personal Artist Room</option>
-    </select>
+      <label for="desc">Artwork Description *</label>
+      <textarea id="desc" name="artwork_description" required></textarea>
 
-    <label for="image">Upload Artwork Image (max 10MB)</label>
-    <input type="file" name="image" accept="image/*" />
+      <label>
+        <input type="checkbox" name="want_ai_description" value="yes">
+        Also create an AI-assisted description for my artwork
+      </label>
 
-    <label>
-      <input type="checkbox" name="terms" required />
-      I confirm I have read and agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>.
-    </label>
+      <label for="portfolio">Portfolio / Website (optional)</label>
+      <input type="url" id="portfolio" name="portfolio">
 
-    <div class="note">
-      🧾 After submitting up to 10 artworks, please support the exhibition by sending a flat fee of <strong>10 CHF</strong> via PayPal to:<br />
-      <strong>inazurichpam@protonmail.com</strong><br /><br />
-      Thank you for sharing your art with the world! 🌍
-    </div>
+      <label for="instagram">Instagram (optional)</label>
+      <input type="url" id="instagram" name="instagram">
 
-    <button type="submit">Submit Artwork</button>
-  </form>
+      <label>
+        <input type="checkbox" name="agree_terms" required>
+        I confirm I’ve read the <a href="terms.html" target="_blank" rel="noopener">Terms & Conditions</a>
+      </label>
+
+      <button type="submit">Submit Profile</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>
+      Need help? Write to us or ping Obi in the gallery.
+      &nbsp;|&nbsp;
+      <a href="terms.html" target="_blank" rel="noopener">Read the full Terms &amp; Conditions</a>
+    </p>
+  </footer>
 
 </body>
 </html>
+
