@@ -52,7 +52,11 @@
 
     <!-- Formspree -->
     <form action="https://formspree.io/f/mvgayppl" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_subject" value="New Artist Submission · PerfectArtMatch" />
+  <!-- Redirect automat după submit -->
+  <input type="hidden" name="_redirect" value="https://inapam.github.io/perfectartmatch-shop/thanks.html" />
+
+  <input type="hidden" name="_subject" value="New Artist Submission · PerfectArtMatch" />
+
       <!-- 1) Artist -->
       <div class="row two">
         <div>
