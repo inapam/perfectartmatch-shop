@@ -5,47 +5,8 @@
   <title>Artist Sign-Up • PerfectArtMatch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body{
-      font-family:Arial,sans-serif; margin:0; padding:0;
-      background:linear-gradient(to bottom right,#3b0a70,#712ac3);
-      color:white;
-    }
-    header{
-      display:flex; justify-content:space-between; align-items:center;
-      padding:1rem 2rem; background:rgba(0,0,0,0.2);
-    }
-    header img{ height:60px; }
-    .signup-btn{
-      background:#f06292; padding:.6rem 1rem; border-radius:20px;
-      color:white; font-weight:bold; text-decoration:none;
-    }
-    .signup-btn:hover{ background:#e91e63; }
-    main{ max-width:900px; margin:2rem auto; padding:0 1rem; }
-    h1{ text-align:center; }
-    form{
-      background:white; color:black; border-radius:12px;
-      padding:1.5rem; box-shadow:0 10px 24px rgba(0,0,0,0.18);
-    }
-    label{ display:block; margin-top:1rem; font-weight:bold; }
-    input, textarea, select{
-      width:100%; padding:.6rem; margin-top:.3rem;
-      border:1px solid #ccc; border-radius:8px; font:inherit;
-    }
-    button{
-      background:#f06292; color:white; border:none;
-      padding:.8rem 1.2rem; margin-top:1.5rem;
-      border-radius:8px; font-weight:bold; cursor:pointer;
-    }
-    button:hover{ background:#e91e63; }
-    footer{
-      text-align:center; margin:2rem 0; font-size:.9rem;
-    }
-    footer a{ color:white; text-decoration:underline; }
-  </style>
 </head>
 <body>
-
   <header>
     <a href="gallery.html" aria-label="Back to gallery">
       <img src="logo.png" alt="PerfectArtMatch logo" />
@@ -56,7 +17,6 @@
   <main>
     <h1>Artist Sign-Up</h1>
     <form action="https://formspree.io/f/mvgayppl" method="POST">
-      <!-- Redirect după trimitere -->
       <input type="hidden" name="_redirect" value="https://inapam.github.io/perfectartmatch-shop/thanks.html" />
 
       <label for="name">Full Name *</label>
@@ -99,6 +59,11 @@
         I confirm I’ve read the <a href="terms.html" target="_blank" rel="noopener">Terms & Conditions</a>
       </label>
 
+      <p style="margin-top:1rem; font-weight:bold; color:#b00;">
+        Please transfer 10 CHF per 10 artworks to PayPal: <strong>inazurichpam@protonmail.com</strong> after submitting your works.  
+        The artist is fully responsible for the sale and direct contact with the buyer.
+      </p>
+
       <button type="submit">Submit Profile</button>
     </form>
   </main>
@@ -110,7 +75,6 @@
       <a href="terms.html" target="_blank" rel="noopener">Read the full Terms &amp; Conditions</a>
     </p>
   </footer>
-
 </body>
 </html>
 
