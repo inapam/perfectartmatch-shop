@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAM – Artist Submission</title>
+</head>
+<body>
+  <h1>Artist Submission (max 10 artworks)</h1>
+  <!-- Replace action with your Formspree endpoint -->
+  <form action="https://formspree.io/f/mvgaypp1" method="POST">
+  <input type="hidden" name="_redirect" value="https://inapam.github.io/perfectartmatch-shop/thanks.html">
+  <input type="hidden" name="_subject"  value="Artist Sign-In · PerfectArtMatch">
+
+    <fieldset>
+      <legend>Artwork 1</legend>
+      <label>Title <input type="text" name="artworks[0][title]" required></label><br>
+      <label>Category <input type="text" name="artworks[0][category]"></label><br>
+      <label>Image URL <input type="url" name="artworks[0][image]" placeholder="https://"></label><br>
+      <label>Description <textarea name="artworks[0][description]" rows="3"></textarea></label><br>
+      <label>Price (optional) <input type="text" name="artworks[0][price]" placeholder="CHF"></label>
+    </fieldset>
+
+    <p><em>Tip:</em> Duplicate the above block up to 10 artworks or submit multiple times.</p>
+
+    <label>
+      Notes to curator / Payment info
+      <textarea name="notes" rows="4" placeholder="Mention if you've paid 10 CHF after 10 works."></textarea>
+    </label><br>
+
+    <button type="submit">Submit to Gallery</button>
+  </form>
+
+  <script>
+    // Minimal client-side hook: save to gallery/data as JSON via download (manual import by Obi)
+    document.getElementById('art-form').addEventListener('submit', function(e) {
+      // This is just a placeholder comment block; Formspree will handle submission.
+    });
+  </script>
+</body>
+</html>
